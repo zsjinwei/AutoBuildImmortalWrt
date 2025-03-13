@@ -24,11 +24,11 @@ echo "print enable_pppoe value=== $enable_pppoe" >> $LOGFILE
 if [ "$enable_pppoe" = "yes" ]; then
     echo "PPPoE is enabled at $(date)" >> $LOGFILE
     # 设置拨号信息
-    uci set network.wan.proto='pppoe'                
-    uci set network.wan.username=$pppoe_account     
-    uci set network.wan.password=$pppoe_password     
-    uci set network.wan.peerdns='1'                  
-    uci set network.wan.auto='1' 
+    uci set network.wan.proto='pppoe'
+    uci set network.wan.username=$pppoe_account
+    uci set network.wan.password=$pppoe_password
+    uci set network.wan.peerdns='1'
+    uci set network.wan.auto='1'
     echo "PPPoE configuration completed successfully." >> $LOGFILE
 else
     echo "PPPoE is not enabled. Skipping configuration." >> $LOGFILE
@@ -43,7 +43,7 @@ uci commit
 
 # 设置编译作者信息
 FILE_PATH="/etc/openwrt_release"
-NEW_DESCRIPTION="Compiled by wukongdaily"
+NEW_DESCRIPTION="Compiled by zsjinwei"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
 
 exit 0

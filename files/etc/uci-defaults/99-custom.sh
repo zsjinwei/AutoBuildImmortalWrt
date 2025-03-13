@@ -37,7 +37,7 @@ ifnames=$(echo "$ifnames" | awk '{$1=$1};1')
 # 网络设置
 if [ "$count" -eq 1 ]; then
    # 单网口设备 类似于NAS模式 动态获取ip模式 具体ip地址取决于上一级路由器给它分配的ip 也方便后续你使用web页面设置旁路由
-   # 单网口设备 不支持修改ip 不要在此处修改ip 
+   # 单网口设备 不支持修改ip 不要在此处修改ip
    uci set network.lan.proto='dhcp'
 elif [ "$count" -gt 1 ]; then
    # 提取第一个接口作为WAN
@@ -101,7 +101,7 @@ uci commit
 
 # 设置编译作者信息
 FILE_PATH="/etc/openwrt_release"
-NEW_DESCRIPTION="Compiled by wukongdaily"
+NEW_DESCRIPTION="Compiled by zsjinwei"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
 
 exit 0
