@@ -136,6 +136,11 @@ jobs:
           body_path: ${{ github.workspace }}/router-info.md
           files: |
             ${{ github.workspace }}/bin/targets/x86/64/*squashfs-combined-efi.img.gz
+            ${{ github.workspace }}/bin/targets/x86/64/*squashfs-combined-efi.vmdk
+            ${{ github.workspace }}/bin/targets/x86/64/*squashfs-combined-efi.vhdx
+            ${{ github.workspace }}/bin/targets/x86/64/*squashfs-combined-efi.vdi
+            ${{ github.workspace }}/bin/targets/x86/64/*squashfs-combined-efi.qcow2
+            ${{ github.workspace }}/bin/targets/x86/64/*generic-image-efi.iso
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
